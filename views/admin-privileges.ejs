@@ -1,0 +1,28 @@
+<!-- adminPanel.ejs -->
+<h1>User Admin Panel</h1>
+<form action="/auth/admin-privileges" method="POST">
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Current Admin Status</th>
+                <th>Admin Privileges</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user, index) { %>
+                <tr>
+                    <td><%= user.firstName %> <%= user.lastName %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.admin %></td>
+                    <td>
+                        <input type="hidden" name="users[<%= index %>][id]" value="<%= user._id %>">
+                        <input type="checkbox" name="users[<%= index %>][admin]" value="true" <% if (user.admin) { %>checked<% } %>>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <button type="submit">Update Admin Privileges</button>
+</form>

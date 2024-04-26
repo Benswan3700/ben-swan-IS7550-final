@@ -1,0 +1,21 @@
+<h1>Taylor Swift's Albums and Current Stream Numbers</h1>
+
+<p>This is my external API. I chose to use spotify so that I could make this about Taylor Swift. It returns the latest 20 albumns which would be helpful if i were to make a fan page/app. How it works is when a get request is sent to 'http://localhost:3000/api/taylor-swift-albums' the router directs it to the controller and I've created two. The one that the router sends to imidally calls the getExternalAuth function which takes my client id and secret key then sends them to the authenticaot for spotify. From there if the response is good we return to the main function with the access token and send a request for the data which in this case is the albumns. It returns all data but I filter it down t just what I want and send theat to the view in a response! My secrect keys can be found in my .env file</p>
+<table>
+  <thead>
+    <tr>
+      <th>Album Name</th>
+      <th>Total Tracks</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% albums.forEach(album => { %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= album.total_tracks %></td>
+        <td><%= album.release_date %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

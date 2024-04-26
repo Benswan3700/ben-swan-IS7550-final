@@ -1,0 +1,16 @@
+<h1><span>Style gallery</span></h1>
+<% if (isLoggedIn && user.admin === true) { %>
+<div>
+    <a href="/styles/new" class="btn btn-primary">New Style</a>
+</div>
+<% } %>
+<ul class="gallery">
+    <% styles.forEach((style) => { %>
+    <li>
+        <a href="styles/<%=style.titleSlug%>" name="<%=style.titleSlug%>">
+            <img src="/<%=style.imageURL%>" alt="<%=style.description%>">
+        </a>
+    </li>
+    <% }) %>
+</ul>
+</div>

@@ -1,0 +1,22 @@
+<h1><span><%=style.title%></span></h1>
+<div>
+	<img src="/<%=style.imageURL%>" alt="<%=style.description%>">
+	<div class="article">
+		<h4><%=style.title%></h4>
+		<p><%=style.description%></p>
+		
+	</div>
+	<% if (isLoggedIn) { console.log(style)%>
+		<form action="/auth/save-favorite/<%=style.titleSlug%>" method="POST">
+			<input type="hidden" name="styleId" value="<%=style._id%>">
+			<button  type="submit">Save as Favorite</button>
+		</form>
+	<% } %>
+	
+</div>
+
+</div>
+
+
+
+  

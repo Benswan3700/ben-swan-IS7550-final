@@ -1,0 +1,21 @@
+<h1>Last 20 Favorites</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Style Name</th>
+      <th>Description</th>
+      <th>Date Added</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% favorites.forEach(favorite => { %>
+    <tr>
+      <td><%= favorite.userId.firstName + ' '+ favorite.userId.lastName%></td>
+      <td><%= favorite.mustacheStyleId.title %></td>
+      <td><%= favorite.mustacheStyleId.description %></td>
+      <td><%= favorite.createdAt.toDateString() %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
