@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 
-// import routes
+// import routes yay
 const homeRoutes = require("./routes/homeRoutes");
 const stylesRoutes = require("./routes/stylesRoutes");
 const blogRoutes = require("./routes/blogRoutes");
