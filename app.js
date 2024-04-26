@@ -72,6 +72,11 @@ app.use("/api", apiRoutes);
 
 app.use(homeRoutes);
 
-mongoose.connect(MONGODB_URI).then(() => {
-  app.listen(3000);
-});
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+    app.listen(process.env.PORT || 3000);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
